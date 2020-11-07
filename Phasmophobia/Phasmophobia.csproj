@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{469539F4-7FE9-4167-A733-A549DB416CEB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Phasmophobia</RootNamespace>
-    <AssemblyName>Phasmophobia</AssemblyName>
+    <RootNamespace>PhasmophobiaGhostAssistant</RootNamespace>
+    <AssemblyName>Phasmophobia Ghost Assistant</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -81,6 +81,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

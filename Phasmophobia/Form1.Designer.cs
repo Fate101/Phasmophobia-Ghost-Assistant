@@ -1,4 +1,4 @@
-﻿namespace Phasmophobia
+﻿namespace PhasmophobiaGhostAssistant
 {
     partial class Form1
     {

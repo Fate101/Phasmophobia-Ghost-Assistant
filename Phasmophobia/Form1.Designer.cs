@@ -40,6 +40,7 @@
             this.lblEvi3 = new System.Windows.Forms.Label();
             this.lblEvi2 = new System.Windows.Forms.Label();
             this.lblEvi1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbEvi1
@@ -171,11 +172,21 @@
             this.lblEvi1.Size = new System.Drawing.Size(0, 13);
             this.lblEvi1.TabIndex = 9;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(289, 154);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(144, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "By Sekynn | Modified by Fate";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(455, 176);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblEvi3);
             this.Controls.Add(this.lblEvi2);
             this.Controls.Add(this.lblEvi1);
@@ -193,7 +204,7 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phasmophobia Ghost Finder";
+            this.Text = "Phasmophobia Ghost Assistant";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,6 +224,7 @@
         private System.Windows.Forms.Label lblEvi3;
         private System.Windows.Forms.Label lblEvi2;
         private System.Windows.Forms.Label lblEvi1;
+        private System.Windows.Forms.Label label4;
     }
 }
 

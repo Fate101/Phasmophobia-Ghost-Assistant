@@ -9,10 +9,14 @@ namespace Phasmophobia
     public class Ghost
     {
         public string name;
+        public string strength;
+        public string weakness;
         public List<int> requiredItems = new List<int>(){0, 0, 0 };
-        public Ghost(string name, int one, int two, int three)
+        public Ghost(string name,string strength,string weakness, int one, int two, int three)
         {
             this.name = name;
+            this.strength = strength;
+            this.weakness = weakness;
             requiredItems[0] = one;
             requiredItems[1] = two;
             requiredItems[2] = three;

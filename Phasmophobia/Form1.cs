@@ -18,24 +18,58 @@ namespace PhasmophobiaGhostAssistant
             cbEvi1.SelectedIndex = 6;
             cbEvi2.SelectedIndex = 6;
             cbEvi3.SelectedIndex = 6;
-            ghosts.Add(new Ghost("Spirit","None","Smudge Sticks (Attack timer to 120 from 90)", 2, 3, 5));
-            ghosts.Add(new Ghost("Wraith","Can't track footprints. Travel through walls and doors","Toxic against Salt. Stop attacking when touching salt", 0, 2, 5));
-            ghosts.Add(new Ghost("Phantom","Looking at it lowers your sanity quicker","Photos make it disappear (Not stop a hunt)", 0, 1, 4));
-            ghosts.Add(new Ghost("Poltergeist","Can touch multiple objects and shut multiple doors", "Ineffective in an empty room.", 2, 4, 5));
+            ghosts.Add(new Ghost("Spirit", "None", "Smudge Sticks (Attack timer to 120 from 90)", 2, 3, 5));
+            ghosts.Add(new Ghost("Wraith", "Can't track footprints. Travel through walls and doors", "Toxic against Salt. Stop attacking when touching salt", 0, 2, 5));
+            ghosts.Add(new Ghost("Phantom", "Looking at it lowers your sanity quicker", "Photos make it disappear (Not stop a hunt)", 0, 1, 4));
+            ghosts.Add(new Ghost("Poltergeist", "Can touch multiple objects and shut multiple doors", "Ineffective in an empty room.", 2, 4, 5));
             ghosts.Add(new Ghost("Banshee", "Focus on one player at a time until it kills them", "Fears Crucifix (Hunt Stop range 5 meters instead of 3)", 0, 1, 5));
             ghosts.Add(new Ghost("Jinn", "Faster if its victim is far away", "Turning off the location's power source (Nulls fast speed)", 1, 2, 4));
-            ghosts.Add(new Ghost("Mare","Increased chance to attack in the dark. It'll turn the power off.", "Turning on lights will lower chance of attack", 0, 2, 4));
-            ghosts.Add(new Ghost("Revenant","Move faster during hunt. Will switch target freely during hunt","Hiding will make it move very slow", 1, 3, 5));
-            ghosts.Add(new Ghost("Shade","Barely do anything when 2 or more people are around (Harder to detect)", "Will rarely start a Hunt when players are grouped together", 1, 3, 4));
+            ghosts.Add(new Ghost("Mare", "Increased chance to attack in the dark. It'll turn the power off.", "Turning on lights will lower chance of attack", 0, 2, 4));
+            ghosts.Add(new Ghost("Revenant", "Move faster during hunt. Will switch target freely during hunt", "Hiding will make it move very slow", 1, 3, 5));
+            ghosts.Add(new Ghost("Shade", "Barely do anything when 2 or more people are around (Harder to detect)", "Will rarely start a Hunt when players are grouped together", 1, 3, 4));
             ghosts.Add(new Ghost("Demon", "Attack more often than any other ghost", "Successful questions on the Ouija Board won't lower the users' sanity", 0, 2, 3));
             ghosts.Add(new Ghost("Yurei", "Stronger effect on people's Sanity", "Smudge Stick will cause it to not wander around the location (90 Seconds)", 0, 3, 4));
             ghosts.Add(new Ghost("Oni", "More active when people are nearby. Moves objects at great speeds.", "Easier to find and identify due to activity", 1, 2, 3));
+            txtMaybe1.Cursor = Cursors.Hand;
+            txtMaybe2.Cursor = Cursors.Hand;
+            txtMaybe3.Cursor = Cursors.Hand;
+            ToolTip tooltip1 = new ToolTip();
+            tooltip1.AutoPopDelay = 5000;
+            tooltip1.InitialDelay = 1000;
+            tooltip1.ReshowDelay = 500;
+            tooltip1.ShowAlways = true;
+            tooltip1.SetToolTip(this.txtMaybe1, "Click to show more info about the ghost");
+            tooltip1.SetToolTip(this.txtMaybe2, "Click to show more info about the ghost");
+            tooltip1.SetToolTip(this.txtMaybe3, "Click to show more info about the ghost");
         }
+        Point pt;
         List<string> itemsName = new List<string>() { "Freezing Temperature", "EMF5", "Spirit Box", "Ghost Writing", "Ghost Orbs", "Fingerprints" };
-        List<int> selectedItens = new List<int>() {6, 6, 6 };
+        List<int> selectedItens = new List<int>() { 6, 6, 6 };
         List<Ghost> ghosts = new List<Ghost>();
         List<Ghost> withTwoEvidences = new List<Ghost>();
         int evidenceCount;
+        public void ResetSize()
+        { 
+            this.Size = new Size(471, 215);
+            pt = new Point(289, 154);
+            this.lblCredits.Location = pt;
+            lblStrenght.Text = "";
+            lblWeakness.Text = "";
+        }
+        public void ShowStrenghtAndWeakness(string name)
+        {
+            this.Size = new Size(471, 280);
+            pt = new Point(289, 219);
+            this.lblCredits.Location = pt;
+            for (int i = 0; i < ghosts.Count; i++)
+            {
+                if(ghosts[i].name == name)
+                {
+                    lblStrenght.Text = $"Strength: {ghosts[i].strength}";
+                    lblWeakness.Text = $"Weakness: {ghosts[i].weakness}";
+                }
+            }
+        }
         public void GhostFind(List<Ghost> ghosts)
         {
             List<Ghost> testingGhosts = new List<Ghost>();
@@ -53,9 +87,9 @@ namespace PhasmophobiaGhostAssistant
                     case 1:
                         txtMaybe1.Text = "Ghost: " + testingGhosts[0].name;
                         lblEvi1.Text = MissingEvidence(testingGhosts[0]);
-                        txtMaybe2.Text = "Strength: " + testingGhosts[0].strength;
+                        txtMaybe2.Text = "";
                         lblEvi2.Text = "";
-                        txtMaybe3.Text = "Weakness: " + testingGhosts[0].weakness;
+                        txtMaybe3.Text = "";
                         lblEvi3.Text = "";
                         break;
                     case 2:
@@ -118,5 +152,30 @@ namespace PhasmophobiaGhostAssistant
             UpdateAndSort();
             GhostFind(ghosts);
         }
+
+        private void txtMaybe1_Click(object sender, EventArgs e)
+        {
+            if (txtMaybe1.Text.Contains("Ghost: ") == true)
+            {
+                string removepart = txtMaybe1.Text.Remove(0,7);
+                ShowStrenghtAndWeakness(removepart);
+            }
+            else
+            {
+                ShowStrenghtAndWeakness(txtMaybe1.Text);
+            }  
+        }
+
+        private void txtMaybe2_Click(object sender, EventArgs e)
+        {
+            ShowStrenghtAndWeakness(txtMaybe2.Text);
+        }
+
+        private void txtMaybe3_Click(object sender, EventArgs e)
+        {
+            ShowStrenghtAndWeakness(txtMaybe3.Text);
+        }
+
+        private void btnResetSize_Click(object sender, EventArgs e) => ResetSize();
     }
 }

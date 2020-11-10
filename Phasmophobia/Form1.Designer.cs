@@ -40,7 +40,10 @@
             this.lblEvi3 = new System.Windows.Forms.Label();
             this.lblEvi2 = new System.Windows.Forms.Label();
             this.lblEvi1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblCredits = new System.Windows.Forms.Label();
+            this.lblStrenght = new System.Windows.Forms.Label();
+            this.lblWeakness = new System.Windows.Forms.Label();
+            this.btnResetSize = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cbEvi1
@@ -131,6 +134,7 @@
             this.txtMaybe1.Name = "txtMaybe1";
             this.txtMaybe1.Size = new System.Drawing.Size(0, 13);
             this.txtMaybe1.TabIndex = 6;
+            this.txtMaybe1.Click += new System.EventHandler(this.txtMaybe1_Click);
             // 
             // txtMaybe2
             // 
@@ -139,6 +143,7 @@
             this.txtMaybe2.Name = "txtMaybe2";
             this.txtMaybe2.Size = new System.Drawing.Size(0, 13);
             this.txtMaybe2.TabIndex = 7;
+            this.txtMaybe2.Click += new System.EventHandler(this.txtMaybe2_Click);
             // 
             // txtMaybe3
             // 
@@ -147,6 +152,7 @@
             this.txtMaybe3.Name = "txtMaybe3";
             this.txtMaybe3.Size = new System.Drawing.Size(0, 13);
             this.txtMaybe3.TabIndex = 8;
+            this.txtMaybe3.Click += new System.EventHandler(this.txtMaybe3_Click);
             // 
             // lblEvi3
             // 
@@ -172,21 +178,51 @@
             this.lblEvi1.Size = new System.Drawing.Size(0, 13);
             this.lblEvi1.TabIndex = 9;
             // 
-            // label4
+            // lblCredits
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(289, 154);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "By Sekynn | Modified by Fate";
+            this.lblCredits.AutoSize = true;
+            this.lblCredits.Location = new System.Drawing.Point(289, 154);
+            this.lblCredits.Name = "lblCredits";
+            this.lblCredits.Size = new System.Drawing.Size(144, 13);
+            this.lblCredits.TabIndex = 12;
+            this.lblCredits.Text = "By Sekynn | Modified by Fate";
+            // 
+            // lblStrenght
+            // 
+            this.lblStrenght.AutoSize = true;
+            this.lblStrenght.Location = new System.Drawing.Point(12, 168);
+            this.lblStrenght.Name = "lblStrenght";
+            this.lblStrenght.Size = new System.Drawing.Size(0, 13);
+            this.lblStrenght.TabIndex = 13;
+            // 
+            // lblWeakness
+            // 
+            this.lblWeakness.AutoSize = true;
+            this.lblWeakness.Location = new System.Drawing.Point(12, 194);
+            this.lblWeakness.Name = "lblWeakness";
+            this.lblWeakness.Size = new System.Drawing.Size(0, 13);
+            this.lblWeakness.TabIndex = 14;
+            // 
+            // btnResetSize
+            // 
+            this.btnResetSize.Location = new System.Drawing.Point(416, 186);
+            this.btnResetSize.Name = "btnResetSize";
+            this.btnResetSize.Size = new System.Drawing.Size(25, 25);
+            this.btnResetSize.TabIndex = 15;
+            this.btnResetSize.Text = "^";
+            this.btnResetSize.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnResetSize.UseVisualStyleBackColor = true;
+            this.btnResetSize.Click += new System.EventHandler(this.btnResetSize_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 176);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(455, 182);
+            this.Controls.Add(this.btnResetSize);
+            this.Controls.Add(this.lblWeakness);
+            this.Controls.Add(this.lblStrenght);
+            this.Controls.Add(this.lblCredits);
             this.Controls.Add(this.lblEvi3);
             this.Controls.Add(this.lblEvi2);
             this.Controls.Add(this.lblEvi1);
@@ -224,7 +260,10 @@
         private System.Windows.Forms.Label lblEvi3;
         private System.Windows.Forms.Label lblEvi2;
         private System.Windows.Forms.Label lblEvi1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblCredits;
+        private System.Windows.Forms.Label lblStrenght;
+        private System.Windows.Forms.Label lblWeakness;
+        private System.Windows.Forms.Button btnResetSize;
     }
 }
 

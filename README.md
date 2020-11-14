@@ -1,7 +1,7 @@
 # Phasmophobia-Ghost-Assistant
 By u/Sekynn on Reddit. Translated by Fate
 
-![alt text](https://i.redd.it/6ckmmt67wox51.png)
+![alt text](https://i.imgur.com/kf2euFe.png)
 
 This is an assistant for Phasmophobia which allows you to figure out the last piece of evidence required more efficiently.
 
